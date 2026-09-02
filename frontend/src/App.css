@@ -91,6 +91,230 @@ legend { margin-bottom: .75rem; }
 .forecast-section, .insights { padding: 2.5rem 0; border-bottom: 1px solid var(--line); }.section-heading { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 1.4rem; }.section-heading > span { color: var(--muted); font-size: .75rem; }.forecast-list { display: grid; grid-template-columns: repeat(5, 1fr); gap: .65rem; }.forecast-day { display: grid; justify-items: center; gap: .9rem; padding: 1.3rem .5rem; border: 1px solid var(--line); background: rgba(255,254,251,.5); font-size: .85rem; }.forecast-day:first-child { border-color: var(--yellow); background: var(--yellow-soft); }.forecast-day .weather-icon { transform: scale(.6); margin: -3px 0; }.forecast-temp { font: 1.2rem Georgia, serif; }.forecast-temp small { color: var(--muted); font-size: .8rem; }.rain-chance { color: var(--green); font-size: .75rem; }
 .insight-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; }.insight-grid article { min-height: 150px; padding: 1.3rem; border: 1px solid var(--line); background: var(--white); }.insight-label { color: #a17815; font-size: .65rem; font-weight: 700; letter-spacing: .12em; }.insight-label--green { color: var(--green); }.insight-label--blue { color: var(--blue); }.insight-grid h3 { margin: .75rem 0 .45rem; font-size: 1.25rem; }.insight-grid p { color: var(--muted); font-size: .82rem; }
 
+/* Modern Auth Page Styles */
+.auth-page {
+  min-height: 100svh;
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #90caf9 100%);
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+}
+
+.auth-container {
+  width: 100%;
+  max-width: 420px;
+}
+
+.auth-box {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+.auth-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin-bottom: 2.5rem;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.auth-tab {
+  padding: 1rem;
+  border: none;
+  background: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #999;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+  position: relative;
+  bottom: -2px;
+}
+
+.auth-tab.active {
+  color: #1e88e5;
+  border-bottom-color: #1e88e5;
+}
+
+.auth-tab:hover {
+  color: #1e88e5;
+}
+
+.auth-error {
+  background: #ffebee;
+  color: #c62828;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  border-left: 4px solid #c62828;
+}
+
+.auth-form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #333;
+  text-transform: capitalize;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 1rem;
+  color: #999;
+  font-size: 1.2rem;
+  pointer-events: none;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 0.85rem 1rem 0.85rem 2.8rem;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  background: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+.input-wrapper input:focus {
+  outline: none;
+  border-color: #1e88e5;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.1);
+}
+
+.forgot-password {
+  text-decoration: none;
+  color: #1e88e5;
+  font-size: 0.85rem;
+  font-weight: 500;
+  align-self: end;
+  margin-top: -0.5rem;
+  transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+  color: #1565c0;
+  text-decoration: underline;
+}
+
+.auth-button {
+  padding: 0.95rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+}
+
+.auth-button--primary {
+  width: 100%;
+  background: linear-gradient(135deg, #1e88e5, #1565c0);
+  color: white;
+  margin-top: 0.5rem;
+}
+
+.auth-button--primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(30, 136, 229, 0.4);
+}
+
+.auth-button--primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+  color: #999;
+  font-size: 0.85rem;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #e0e0e0;
+}
+
+.social-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.social-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 12px;
+  background: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.social-button:hover:not(:disabled) {
+  border-color: #1e88e5;
+  background: #f5f5f5;
+  transform: translateY(-2px);
+}
+
+.social-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.google-icon,
+.apple-icon {
+  font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .auth-box {
+    padding: 1.5rem;
+  }
+
+  .auth-header {
+    margin-bottom: 2rem;
+  }
+
+  .auth-form {
+    gap: 1rem;
+  }
+}
+
 @media (max-width: 700px) {
   .account-page { display: block; }.account-art { height: 170px; }.account-art span { top: 13%; left: 15%; font-size: 8rem; }.account-panel { width: calc(100% - 40px); padding: 2rem 0 3rem; }.account-copy { margin: 3.5rem 0 2rem; }.topbar, .dashboard-content, .setup-content { width: calc(100% - 40px); }.setup-content { margin-top: 3rem; }.purpose-grid { grid-template-columns: 1fr; }.dashboard nav { display: none; }.dashboard-content { padding-top: 2rem; }.greeting { align-items: start; flex-direction: column; margin: 2.5rem 0 2rem; }.sunrise { grid-template-columns: repeat(3, auto); align-items: baseline; gap: .8rem; }.weather-overview { grid-template-columns: 1fr; gap: 2rem; padding: 2.5rem 0; }.weather-stats { gap: .5rem; }.weather-stats div { padding-left: .6rem; }.weather-stats strong { font-size: 1rem; }.forecast-list { overflow: auto; grid-template-columns: repeat(5, minmax(90px, 1fr)); }.insight-grid { grid-template-columns: 1fr; }
 }
